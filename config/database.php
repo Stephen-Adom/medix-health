@@ -74,7 +74,7 @@ return [
             'database' => substr($url["path"], 1),
             'username' => $url["user"],
             'password' => $url["pass"],
-            'charset' => 'utf8',
+            'charset' => 'utf8mb4',
             'prefix' => '',
             'prefix_indexes' => true,
             'schema' => 'public',
