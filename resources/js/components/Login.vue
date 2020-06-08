@@ -110,19 +110,19 @@ export default {
 	  ],
       items: [
           {
-            src: 'http://localhost:8000/app_asset/doctor.jpg'
+            src: '/app_asset/doctor.jpg'
           },
           {
-            src: 'http://localhost:8000/app_asset/nurse.jpg'
+            src: '/app_asset/nurse.jpg'
           },
           {
-            src: 'http://localhost:8000/app_asset/pharmacist.jpg'
+            src: '/app_asset/pharmacist.jpg'
           },
           {
-            src: 'http://localhost:8000/app_asset/lab tech.jpg'
+            src: '/app_asset/lab tech.jpg'
           },
           {
-            src: 'http://localhost:8000/app_asset/manager.png'
+            src: '/app_asset/manager.png'
           },
         ]
    }),

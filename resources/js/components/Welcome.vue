@@ -3,7 +3,7 @@
         <v-row align="center" justify="center" id="welcome_intro">
             <v-col cols="12" lg="6">
                 <div align="center" justify="center">
-                    <v-img src="http://localhost:8000/app_asset/medix_full.png" id="brand_logo" width="50%"></v-img>
+                    <v-img src="/app_asset/medix_full.png" id="brand_logo" width="50%"></v-img>
                 </div>
                 <div align="center" justify="center" class="mt-6">
                     <h1 class="overline grey--text ligten-2 text-uppercase font-weight-thin application--text">Application</h1>
