@@ -14,8 +14,12 @@ return [
     | you may use many connections at once using the Database library.
     |
     */
+    $DATABASE_URL=parse_url('postgres://qhqigorjcedyxp:828da83da3393cb473a745b69dc61b38e925aaa155f6aaf495e67678d6b391b4@ec2-3-91-139-25.compute-1.amazonaws.com:5432/d2vfb877kmirs6'),
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+
+
+
+    'default' => env('DB_CONNECTION', 'pgsql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -65,12 +69,12 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
-            'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'url' => $DATABASE_URL,
+            'host' => $DATABASE_URL["host"],
+            'port' => $DATABASE_URL["port"],
+            'database' => ltrim($DATABASE_URL["path"], "/"),
+            'username' => $DATABASE_URL["user"],
+            'password' => $DATABASE_URL["pass"],
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
