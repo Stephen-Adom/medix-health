@@ -638,11 +638,7 @@ export default {
         },
     },
     mounted(){
-        this.$refs.topProgress.start();
-            
-        setInterval(() => {
-            this.$refs.topProgress.done()
-        }, 1000);
+
     },
     created(){
         this.fetchUser();
