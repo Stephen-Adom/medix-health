@@ -262,7 +262,7 @@ export default {
         },
         getProfile(staff){
             if(staff.image){
-                return '/storage/profiles/' + staff.image;
+                return '/staff/profiles/' + staff.image;
             }else{
                 if(staff.gender === 'Male'){
                     return '/app_asset/male-profile-2.jpg'

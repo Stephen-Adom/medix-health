@@ -149,7 +149,7 @@ export default {
         getImage(){
             if(this.getUser){
                 if(this.getUser.image){
-                    return '/storage/profiles/' + this.getUser.image;
+                    return '/staff/profiles/' + this.getUser.image;
                 }else{
                         if(this.getUser.role_id === 1){
                         return '/app_asset/doctor.jpg'
@@ -222,7 +222,7 @@ export default {
       },
       formatImage(item){
           if(item.image){
-              return '/storage/patients/profiles/' + item.image;
+              return '/patients/profiles/' + item.image;
           }else{
             if(item.gender === 'Male'){
                 return '/app_asset/male_avatar.png'

@@ -161,7 +161,7 @@
 							<v-col cols="12" sm="6" md="4">
 								<v-select dense color="success darken-1" v-model.trim="editedItem.gender" :rules="genderRules" :items="genderOptions" label="Gender" outlined />
 							</v-col>
-							<v-col cols="12">
+							<v-col cols="12" sm="6" md="6">
 								<v-text-field color="success darken-1" outlined dense :rules="addressRules" v-model.trim="editedItem.address" label="Address"></v-text-field>
 							</v-col>
 
@@ -169,9 +169,6 @@
 								<v-text-field color="success darken-1" outlined dense :rules="jobRules" v-model.trim="editedItem.job_title" label="Job Title"></v-text-field>
 							</v-col>
 							
-							<v-col cols="12" sm="6" md="6">
-								<v-text-field color="success darken-1" outlined dense :rules="passwordRules" v-model.trim="editedItem.password" label="Default Password" type="password"></v-text-field>
-							</v-col>
 							<v-col cols="12" class="d-flex">
 								<label for="status" class="mt-7 mr-3 subtitle-1 font-weight-bold">Role:</label>
 								<v-radio-group v-model="editedItem.role" row :rules="roleRules">
@@ -262,10 +259,6 @@ import { mapGetters, mapActions } from 'vuex';
 		titleRules: [
         	(v) => !!v || 'Title is required',
 		],
-		passwordRules: [
-			(v) => !!v || 'Password is required',
-			(v) => (v && v.length >= 8) || 'Password must be greater than 8 characters',
-		],
 		phoneRules: [
 			(v) => !!v || 'Phone number is required',
 			(v) => (v && v.length === 10) || 'Phone Number must be equal to 10 characters',
@@ -302,7 +295,6 @@ import { mapGetters, mapActions } from 'vuex';
         role:null,
 		status: null,
 		job_title: '',
-		password:'',
       }
     }),
 
@@ -475,7 +467,7 @@ import { mapGetters, mapActions } from 'vuex';
 	  },
 	  getImage(item){
 		  if(item.image){
-			  return '/storage/profiles/' + item.image;
+			  return '/staff/profiles/' + item.image;
 		  }else{
 			if(item.gender === "Male"){
 				return '/app_asset/male-profile-2.jpg'

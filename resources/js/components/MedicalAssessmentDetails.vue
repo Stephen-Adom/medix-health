@@ -755,7 +755,7 @@ export default {
         getPatientImage(){
             if(this.appointment){
                 if(this.appointment.patient.image){
-                    return '/storage/patients/profiles/' + this.appointment.patient.image
+                    return '/patients/profiles/' + this.appointment.patient.image
                 }else{
                     if(this.appointment.patient.gender === 'Male'){
                         return '/app_asset/male_avatar.png'
@@ -997,7 +997,7 @@ export default {
         },
         getStaffImage(item){
 		  if(item.image){
-			  return '/storage/profiles/' + item.image;
+			  return '/staff/profiles/' + item.image;
 		  }else{
 			if(item.gender === "Male"){
 				return '/app_asset/male-profile-2.jpg'

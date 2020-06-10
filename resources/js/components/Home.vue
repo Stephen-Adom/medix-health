@@ -6,7 +6,7 @@
               <v-container class="pa-0">
                 <v-row class="pa-0">
                   <v-col cols="12" v-for="(item, i) in items" :key="i">
-                    <v-card :color="item.color" dark link :to="item.link">
+                    <v-card :color="item.color" dark link :to="item.link" flat>
                       <div class="d-flex flex-no-wrap justify-space-between">
                         <div class="pt-4">
                           <v-card-title class="subtitle-1 font-weight-bold text-uppercase" v-text="item.title" />

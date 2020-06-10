@@ -167,7 +167,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     getImage: function getImage() {
       if (this.getUser) {
         if (this.getUser.image) {
-          return '/storage/profiles/' + this.getUser.image;
+          return '/staff/profiles/' + this.getUser.image;
         } else {
           if (this.getUser.role_id === 1) {
             return '/app_asset/doctor.jpg';
@@ -239,7 +239,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     formatImage: function formatImage(item) {
       if (item.image) {
-        return '/storage/patients/profiles/' + item.image;
+        return '/patients/profiles/' + item.image;
       } else {
         if (item.gender === 'Male') {
           return '/app_asset/male_avatar.png';

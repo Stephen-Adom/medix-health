@@ -708,7 +708,7 @@ export default {
 
     doctor_img(doctor){
       if(doctor.image){
-        return '/storage/profiles/' + doctor.image
+        return '/staff/profiles/' + doctor.image
       }else{
         return '/app_asset/doctor.jpg';
       }
@@ -716,7 +716,7 @@ export default {
 
     lab_img(doctor){
       if(doctor.image){
-        return '/storage/profiles/' + doctor.image
+        return '/staff/profiles/' + doctor.image
       }else{
         return '/app_asset/lab tech.jpg';
       }
@@ -781,11 +781,11 @@ export default {
         }) 
     },
     logout(){
-      axios.post('/auth_logout').then(response => {
-        if(response.data.success){
-          this.$router.go();
-        }
-      });
+        axios.post('/auth_logout').then(response =>{
+          if(response.data.success){
+            this.$router.go('/');
+          }
+        });
     },
     goToAppointment(){
       this.$router.push({name: 'today_appointment'})
@@ -883,7 +883,7 @@ export default {
       getImage(){
         if(this.getUser){
             if(this.getUser.image){
-                return '/storage/profiles/' + this.getUser.image;
+                return '/staff/profiles/' + this.getUser.image;
             }else{
                   if(this.getUser.role_id === 1){
                     return '/app_asset/doctor.jpg'

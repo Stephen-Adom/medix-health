@@ -88,7 +88,7 @@ class StaffController extends Controller
             'age' => $request->staff['age'],
             'status' => $request->staff['status'],
             'username' => $request->staff['username'],
-            'password' => Hash::make($request->staff['password'])
+            'password' => Hash::make('password')
         ]);
         
         ProcessEmail::dispatch($user)->onQueue('emails');

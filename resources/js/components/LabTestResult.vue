@@ -305,7 +305,7 @@ export default {
         getImage(){
             if(this.appointment){
                 if(this.appointment.patient.image){
-                  return '/storage/patients/profiles/' + this.appointment.patient.image;
+                  return '/patients/profiles/' + this.appointment.patient.image;
                 }else{
                   if(this.appointment.patient.gender === 'Male'){
                       return '/app_asset/male_avatar.png'

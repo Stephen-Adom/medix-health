@@ -188,7 +188,7 @@ var swalWithBootstrapButtons = Swal.mixin({
     getImage: function getImage() {
       if (this.appointment) {
         if (this.appointment.patient.image) {
-          return '/storage/patients/profiles/' + this.appointment.patient.image;
+          return '/patients/profiles/' + this.appointment.patient.image;
         } else {
           if (this.appointment.patient.gender === 'Male') {
             return '/app_asset/male_avatar.png';
@@ -201,7 +201,7 @@ var swalWithBootstrapButtons = Swal.mixin({
     getSpecialistImage: function getSpecialistImage() {
       if (this.appointment) {
         if (this.appointment.user.image) {
-          return '/storage/profiles/' + this.appointment.user.image;
+          return '/staff/profiles/' + this.appointment.user.image;
         } else {
           if (this.appointment.user.gender === 'Male') {
             return '/app_asset/male-profile-2.jpg';
@@ -905,7 +905,7 @@ var render = function() {
         [
           _c(
             "v-card",
-            { attrs: { color: "primary", dark: "" } },
+            { attrs: { color: "primary", dark: "", flat: "" } },
             [
               _c(
                 "v-card-text",

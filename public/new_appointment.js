@@ -393,7 +393,7 @@ window.Swal = sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a;
     },
     getImage: function getImage(item) {
       if (item.image) {
-        return '/storage/profiles/' + item.image;
+        return '/staff/profiles/' + item.image;
       } else {
         if (item.gender === "Male") {
           return '/app_asset/male-profile-2.jpg';

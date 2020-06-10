@@ -227,9 +227,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -270,11 +267,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }],
       titleRules: [function (v) {
         return !!v || 'Title is required';
-      }],
-      passwordRules: [function (v) {
-        return !!v || 'Password is required';
-      }, function (v) {
-        return v && v.length >= 8 || 'Password must be greater than 8 characters';
       }],
       phoneRules: [function (v) {
         return !!v || 'Phone number is required';
@@ -336,8 +328,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         address: '',
         role: null,
         status: null,
-        job_title: '',
-        password: ''
+        job_title: ''
       }
     };
   },
@@ -515,7 +506,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     getImage: function getImage(item) {
       if (item.image) {
-        return '/storage/profiles/' + item.image;
+        return '/staff/profiles/' + item.image;
       } else {
         if (item.gender === "Male") {
           return '/app_asset/male-profile-2.jpg';
@@ -1569,7 +1560,7 @@ var render = function() {
                           _vm._v(" "),
                           _c(
                             "v-col",
-                            { attrs: { cols: "12" } },
+                            { attrs: { cols: "12", sm: "6", md: "6" } },
                             [
                               _c("v-text-field", {
                                 attrs: {
@@ -1617,35 +1608,6 @@ var render = function() {
                                     )
                                   },
                                   expression: "editedItem.job_title"
-                                }
-                              })
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-col",
-                            { attrs: { cols: "12", sm: "6", md: "6" } },
-                            [
-                              _c("v-text-field", {
-                                attrs: {
-                                  color: "success darken-1",
-                                  outlined: "",
-                                  dense: "",
-                                  rules: _vm.passwordRules,
-                                  label: "Default Password",
-                                  type: "password"
-                                },
-                                model: {
-                                  value: _vm.editedItem.password,
-                                  callback: function($$v) {
-                                    _vm.$set(
-                                      _vm.editedItem,
-                                      "password",
-                                      typeof $$v === "string" ? $$v.trim() : $$v
-                                    )
-                                  },
-                                  expression: "editedItem.password"
                                 }
                               })
                             ],

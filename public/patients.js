@@ -449,7 +449,7 @@ var swalWithBootstrapButtons = sweetalert2__WEBPACK_IMPORTED_MODULE_2___default.
     },
     getImage: function getImage(item) {
       if (item.image) {
-        return '/storage/patients/profiles/' + item.image;
+        return '/patients/profiles/' + item.image;
       } else {
         if (item.gender === 'Male') {
           return '/app_asset/male_avatar.png';

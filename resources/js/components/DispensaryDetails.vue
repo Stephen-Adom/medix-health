@@ -283,10 +283,14 @@ export default {
             return this.allData.find(item => item.id == this.id);
         },
         getImage(){
-            if(this.medicInfo.patient.gender === 'Male'){
-                return '/app_asset/male_avatar.png'
+            if(this.medicInfo.patient.image){
+                return '/patient/profiles/' + this.medicInfo.patient.image;
             }else{
-                return '/app_asset/undraw_female_avatar_l3ey.png'
+                if(this.medicInfo.patient.gender === 'Male'){
+                    return '/app_asset/male_avatar.png'
+                }else{
+                    return '/app_asset/undraw_female_avatar_l3ey.png'
+                }
             }
         },
         

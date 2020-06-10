@@ -611,7 +611,7 @@ export default {
         getImage(){
             if(this.getUser){
                 if(this.getUser.image){
-                    return '/storage/profiles/' + this.getUser.image;
+                    return '/staff/profiles/' + this.getUser.image;
                 }else{
                      if(this.getUser.role_id === 1){
                         return '/app_asset/doctor.jpg'

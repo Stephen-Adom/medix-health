@@ -8,6 +8,7 @@ use Auth;
 use Storage;
 use App\User;
 use App\Patient;
+use Image;
 
 class UploadImageController extends Controller
 {
@@ -26,12 +27,15 @@ class UploadImageController extends Controller
             $imageName = 'image_' . time() . '.' . $image_extension[1]; //generating unique file name;
             // \File::put(storage_path(). 'public/profiles/' . $imageName, base64_decode($image));
             // Storage::put($imageName, base64_decode($image), 'public');
-            Storage::disk('profiles')->put($imageName,base64_decode($image));
+            // Storage::disk('profiles')->put($imageName,base64_decode($image));
+            Image::make(base64_decode($image))->save( public_path('/staff/profiles/'.$imageName));
 
             $request->merge(['image' => $imageName]);
             
-            if($old_image){
-                Storage::disk('profiles')->delete($old_image);
+            $old_photo_exists = public_path('/staff/profiles/'.$old_image); 
+
+            if(file_exists($old_photo_exists)){
+                @unlink($old_photo_exists);
             }
         }
 
@@ -57,12 +61,14 @@ class UploadImageController extends Controller
             $imageName = 'image_' . time() . '.' . $image_extension[1]; //generating unique file name;
             // \File::put(storage_path(). 'public/profiles/' . $imageName, base64_decode($image));
             // Storage::put($imageName, base64_decode($image), 'public');
-            Storage::disk('patient_profiles')->put($imageName,base64_decode($image));
+            Image::make(base64_decode($image))->save( public_path('/patient/profiles/'.$imageName));
 
             $request->merge(['image' => $imageName]);
             
-            if($old_image){
-                Storage::disk('patient_profiles')->delete($old_image);
+            $old_photo_exists = public_path('/patients/profiles/'.$old_image); 
+
+            if(file_exists($old_photo_exists)){
+                @unlink($old_photo_exists);
             }
         }
 
@@ -83,7 +89,11 @@ class UploadImageController extends Controller
                 'image' => NULL
             ]);
 
-            Storage::disk('profiles')->delete($current_image);
+            $current_photo_exists = public_path('/staff/profiles/'.$current_image); 
+
+            if(file_exists($current_photo_exists)){
+                @unlink($current_photo_exists);
+            }
 
             return response()->json(['success' => 'Image Removed']);
         }
@@ -101,7 +111,11 @@ class UploadImageController extends Controller
                 'image' => NULL
             ]);
 
-            Storage::disk('patient_profiles')->delete($current_image);
+            $current_photo_exists = public_path('/patients/profiles/'.$current_image); 
+
+            if(file_exists($current_photo_exists)){
+                @unlink($current_photo_exists);
+            }
 
             return response()->json(['success' => 'Image Removed']);
         }

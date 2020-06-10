@@ -797,7 +797,7 @@ var swalWithBootstrapButtons = sweetalert2__WEBPACK_IMPORTED_MODULE_1___default.
     getPatientImage: function getPatientImage() {
       if (this.patientInfo) {
         if (this.patientInfo.image) {
-          return '/storage/patients/profiles/' + this.patientInfo.image;
+          return '/patients/profiles/' + this.patientInfo.image;
         } else {
           if (this.patientInfo.gender === 'Male') {
             return "/app_asset/male_avatar.png";
@@ -1211,7 +1211,7 @@ var swalWithBootstrapButtons = sweetalert2__WEBPACK_IMPORTED_MODULE_1___default.
     },
     getImage: function getImage(item) {
       if (item.image) {
-        return '/storage/profiles/' + item.image;
+        return '/staff/profiles/' + item.image;
       } else {
         if (item.gender === "Male") {
           return '/app_asset/male-profile-2.jpg';

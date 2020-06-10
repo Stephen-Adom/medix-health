@@ -130,7 +130,7 @@ var swalWithBootstrapButtons = Swal.mixin({
   methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])(['fetch_all_canceled']), {
     getImage: function getImage(patient) {
       if (patient.image) {
-        return '/storage/patients/profiles/' + patient.image;
+        return '/patients/profiles/' + patient.image;
       } else {
         if (patient.gender === 'Male') {
           return '/app_asset/male_avatar.png';

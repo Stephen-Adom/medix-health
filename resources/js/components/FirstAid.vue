@@ -459,11 +459,16 @@ export default {
             }
         },
         getImage(){
-            if(this.patient.gender === 'Male'){
-                return `/app_asset/male_avatar.png`
+            if(this.patient.image){
+                return '/patient/profiles/' + this.patient.image;
             }else{
-                return `/app_asset/undraw_female_avatar_l3ey.png`
+                if(this.patient.gender === 'Male'){
+                    return `/app_asset/male_avatar.png`
+                }else{
+                    return `/app_asset/undraw_female_avatar_l3ey.png`
+                }
             }
+        
         },
         format_injury_date(){
             if(this.report != null){

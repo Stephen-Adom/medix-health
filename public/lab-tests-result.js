@@ -330,7 +330,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     getImage: function getImage() {
       if (this.appointment) {
         if (this.appointment.patient.image) {
-          return '/storage/patients/profiles/' + this.appointment.patient.image;
+          return '/patients/profiles/' + this.appointment.patient.image;
         } else {
           if (this.appointment.patient.gender === 'Male') {
             return '/app_asset/male_avatar.png';

@@ -78,7 +78,7 @@
 		<v-dialog v-model="loading_dialog" hide-overlay persistent width="300">
 			<v-card color="success darken-2" dark flat>
 				<v-card-text>
-				<span class="subtitle-2 font-weight-bold font-italic white--text">authenticating...</span>  
+				<span class="subtitle-2 font-weight-thin font-italic white--text">authenticating user...</span>  
 				<v-progress-linear indeterminate color="white" class="mb-0"></v-progress-linear>
 				</v-card-text>
 			</v-card>
@@ -183,7 +183,15 @@ export default {
                         title: 'Your Account has been blocked. Please contact the Manager',
                     });
                 }
-            })
+            }).catch(error => {
+				this.$refs.topProgress.fail();
+				this.loading_dialog = false;
+
+				Toast.fire({
+					icon: 'error',
+					title: 'Error Connecting to Database' + ' ' + error,
+				});
+			})
         }
 	},
 	mounted(){

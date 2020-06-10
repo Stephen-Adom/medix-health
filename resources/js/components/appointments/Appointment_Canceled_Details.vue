@@ -118,7 +118,7 @@
         </v-row>
 
     <v-dialog v-model="loading_dialog" hide-overlay persistent width="300">
-        <v-card color="primary" dark>
+        <v-card color="primary" dark flat>
             <v-card-text>
                 <span class="caption font-italic">updating...</span>
                 <v-progress-linear indeterminate color="white" class="mb-0"></v-progress-linear>
@@ -167,7 +167,7 @@ export default {
         getImage(){
             if(this.appointment){
                 if(this.appointment.patient.image){
-                    return '/storage/patients/profiles/' + this.appointment.patient.image;
+                    return '/patients/profiles/' + this.appointment.patient.image;
                 }else{
                     if(this.appointment.patient.gender === 'Male'){
                         return '/app_asset/male_avatar.png'
@@ -180,7 +180,7 @@ export default {
         getSpecialistImage(){
             if(this.appointment){
                 if(this.appointment.user.image){
-                    return '/storage/profiles/' + this.appointment.user.image;
+                    return '/staff/profiles/' + this.appointment.user.image;
                 }else{
                     if(this.appointment.user.gender === 'Male'){
                         return '/app_asset/male-profile-2.jpg'

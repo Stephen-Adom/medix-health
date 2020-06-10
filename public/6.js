@@ -416,7 +416,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     getImage: function getImage(item) {
       if (item.patient.image) {
-        return '/storage/patients/profiles/' + item.patient.image;
+        return '/patients/profiles/' + item.patient.image;
       } else {
         if (item.patient.gender === 'Male') {
           return '/app_asset/male_avatar.png';

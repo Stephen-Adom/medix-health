@@ -432,7 +432,7 @@ export default {
       },
     getImage(item){
         if(item.image){
-            return '/storage/patients/profiles/' + item.image;
+            return '/patients/profiles/' + item.image;
         }else{
             if(item.gender === 'Male'){
                 return '/app_asset/male_avatar.png'

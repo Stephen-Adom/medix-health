@@ -308,7 +308,7 @@ var swalWithBootstrapButtons = Swal.mixin({
     },
     getImage: function getImage(item) {
       if (item.patient.image) {
-        return '/storage/patients/profiles/' + item.patient.image;
+        return '/patients/profiles/' + item.patient.image;
       } else {
         if (item.patient.gender === 'Male') {
           return '/app_asset/male_avatar.png';

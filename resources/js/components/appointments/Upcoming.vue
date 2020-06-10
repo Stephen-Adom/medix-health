@@ -199,7 +199,7 @@ export default {
 
         getImage(patient){
             if(patient.image){
-                return '/storage/patients/profiles/' + patient.image;
+                return '/patients/profiles/' + patient.image;
             }else{
                 if(patient.gender === 'Male'){
                     return '/app_asset/male_avatar.png'
