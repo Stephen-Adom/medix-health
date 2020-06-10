@@ -165,7 +165,7 @@
                                 <v-text-field dense outlined label="Last Name" color="success darken-2" :rules="namedRules" v-model="patient.lastname"></v-text-field>
                             </v-col>
                             <v-col sm="6" md="6">
-                                    <v-select :attach="attach" dense color="success darken-2":rules="genderRules" v-model="patient.sex" :items="genderOptions" label="Sex" outlined />
+                                    <v-select :attach="attach" dense color="success darken-2" :rules="genderRules" v-model="patient.sex" :items="genderOptions" label="Sex" outlined />
                             </v-col>
                             <v-col cols="12" sm="6" md="6">
                                 <v-text-field dense outlined label="Email" color="success darken-2" :rules="emailRules" v-model="patient.email"></v-text-field>
