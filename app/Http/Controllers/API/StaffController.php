@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Validator;
 use Hash;
+use Mail;
+use App\Mail\NewAccount;
 
 class StaffController extends Controller
 {
@@ -91,7 +93,8 @@ class StaffController extends Controller
             'password' => Hash::make('password')
         ]);
         
-        ProcessEmail::dispatch($user)->onQueue('emails');
+        // ProcessEmail::dispatch($user)->onQueue('emails');
+        Mail::to($this->user->email)->send(new NewAccount($this->user));
 
         $new_user = User::with('role')->where('id', $user->id)->first();
 

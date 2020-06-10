@@ -181,17 +181,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     },
     formatStatus: function formatStatus() {
-      if (this.staff.status === 0) {
-        return 'Inactive';
-      } else {
+      if (this.staff.status == 1) {
         return 'Active';
+      } else {
+        return 'Inactive';
       }
     },
     getColor: function getColor() {
-      if (this.staff.status === 0) {
-        return 'red darken-1';
-      } else {
+      if (this.staff.status == 1) {
         return 'success darken-1';
+      } else {
+        return 'red darken-1';
       }
     },
     getImage: function getImage() {
@@ -302,7 +302,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     },
     format_status: function format_status(staff) {
-      if (staff.status === 1) {
+      if (staff.status == 1) {
         return 'Active';
       } else {
         return 'Inactive';
@@ -730,7 +730,7 @@ var render = function() {
                                       attrs: { cols: "5" }
                                     },
                                     [
-                                      _vm.staff.status === 1
+                                      _vm.staff.status == 1
                                         ? _c(
                                             "v-btn",
                                             {

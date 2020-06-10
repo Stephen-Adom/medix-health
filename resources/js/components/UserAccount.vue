@@ -75,7 +75,7 @@
                                         <h5 class="subtitle-2">Age: <span class="font-weight-bold" v-if="staff">{{staff.age}}</span></h5>
                                     </v-col>
                                     <v-col cols="5" class="d-flex justify-end pa-0">
-                                        <v-btn class="ma-2 px-4" tile color="red darken-2" depressed dark @click="deactivate" v-if="staff.status === 1">
+                                        <v-btn class="ma-2 px-4" tile color="red darken-2" depressed dark @click="deactivate" v-if="staff.status == 1">
                                             <span class="text-lowercase caption">Deactivate</span>    
                                         </v-btn>
                                         <v-btn class="ma-2 px-4" tile color="success darken-2" depressed dark @click="activate" v-else>
@@ -159,17 +159,17 @@ export default {
             }
         },
         formatStatus(){
-            if(this.staff.status === 0){
-                return 'Inactive'
-            }else{
+            if(this.staff.status == 1){
                 return 'Active'
+            }else{
+                return 'Inactive'
             }
         },
         getColor(){
-            if(this.staff.status === 0){
-                return 'red darken-1'
-            }else{
+            if(this.staff.status == 1){
                 return 'success darken-1'
+            }else{
+                return 'red darken-1'
             }
         },
         getImage(){
@@ -273,7 +273,7 @@ export default {
         },
 
         format_status(staff){
-            if(staff.status === 1){
+            if(staff.status == 1){
                 return 'Active'
             }else{
                 return 'Inactive'
