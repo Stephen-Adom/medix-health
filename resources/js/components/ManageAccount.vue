@@ -447,7 +447,7 @@ import { mapGetters, mapActions } from 'vuex';
       	}
       },
       formatStatus(status){
-      	if(status === 1){
+      	if(status == 1){
       		return 'Active'
       	}else{
       		return 'Inactive'

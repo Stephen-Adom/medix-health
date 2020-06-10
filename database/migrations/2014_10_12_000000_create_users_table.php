@@ -28,7 +28,7 @@ class CreateUsersTable extends Migration
             $table->string('gender');
             $table->string('job_title');
             $table->mediumText('Biodata')->nullable();
-            $table->boolean('status')->default(true);
+            $table->boolean('status')->default(1);
             $table->string('image')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

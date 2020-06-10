@@ -486,7 +486,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     },
     formatStatus: function formatStatus(status) {
-      if (status === 1) {
+      if (status == 1) {
         return 'Active';
       } else {
         return 'Inactive';
