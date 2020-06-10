@@ -602,11 +602,7 @@ export default {
 			}
 		  }
 	  },
-        // getLabSchedule(){
-        //     axios.get('/api/lab_schedule').then(response => {
-        //         this.schedules = response.data.schedule;
-        //     })
-        // } 
+
     },
 
 }
