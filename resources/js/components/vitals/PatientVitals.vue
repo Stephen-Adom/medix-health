@@ -442,7 +442,7 @@ export default {
         },
         getImage(){
             if(this.patient.image){
-                return '/storage/patients/profiles/' + this.patient.image;
+                return '/patients/profiles/' + this.patient.image;
             }else{
                 if(this.patient.gender === 'Male'){
                     return '/app_asset/male_avatar.png'
