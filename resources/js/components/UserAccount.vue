@@ -196,6 +196,9 @@ export default {
             return '(+233)' + ' ' + value;
         }
     },
+    updated(){
+        this.fetchStaff();
+    },
     methods:{
         ...mapActions(['fetchStaff']),
         formatContact(contact){

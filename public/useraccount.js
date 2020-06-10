@@ -218,6 +218,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return '(+233)' + ' ' + value;
     }
   },
+  updated: function updated() {
+    this.fetchStaff();
+  },
   methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])(['fetchStaff']), {
     formatContact: function formatContact(contact) {
       return '(+233)' + ' ' + contact.slice(1, 10);
