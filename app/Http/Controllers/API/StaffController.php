@@ -94,7 +94,7 @@ class StaffController extends Controller
         ]);
         
         // ProcessEmail::dispatch($user)->onQueue('emails');
-        Mail::to($user->email)->send(new NewAccount($user));
+        // Mail::to($user->email)->send(new NewAccount($user));
 
         $new_user = User::with('role')->where('id', $user->id)->first();
 

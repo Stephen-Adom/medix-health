@@ -863,13 +863,13 @@ export default {
     setTimer(){
       this.warningTimer = setTimeout(() => {
         this.timeout_session_dialog = true;
-      },  6 * 1000);
+      },  15 * 60 * 1000);
     },
 
     setLogoutTimer(){
       this.logoutTimer  = setTimeout(() => {
         this.logoutUser();
-      },  9 * 1000);
+      },  5 * 60 * 1000);
     },
 
     logoutUser(){
