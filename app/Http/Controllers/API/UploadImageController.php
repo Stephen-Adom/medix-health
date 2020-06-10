@@ -61,7 +61,7 @@ class UploadImageController extends Controller
             $imageName = 'image_' . time() . '.' . $image_extension[1]; //generating unique file name;
             // \File::put(storage_path(). 'public/profiles/' . $imageName, base64_decode($image));
             // Storage::put($imageName, base64_decode($image), 'public');
-            Image::make(base64_decode($image))->save( public_path('/patient/profiles/'.$imageName));
+            Image::make(base64_decode($image))->save( public_path('/patients/profiles/'.$imageName));
 
             $request->merge(['image' => $imageName]);
             
