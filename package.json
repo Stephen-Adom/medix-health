@@ -35,7 +35,7 @@
         "@fullcalendar/list": "^4.4.0",
         "@fullcalendar/timegrid": "^4.4.0",
         "@fullcalendar/vue": "^4.4.0",
-        "chart.js": "^2.9.3",
+        "chart.js": "^2.9.4",
         "dayspan-vuetify": "^0.4.0",
         "dom-to-image": "^2.6.0",
         "html2canvas": "^1.0.0-rc.5",
